@@ -1,0 +1,20 @@
+{
+    "stateNotPlaced" : { 
+        "position": {
+            "x": null,
+            "y": null
+        },
+        "direction": false, 
+        "placed": false 
+    },
+    "statePlaced" : { "position": { "x": 1, "y": 2 }, "direction": "north", "placed": true },
+    "northStatePlaced" : { "position": { "x": 5, "y": 5 }, "direction": "north", "placed": true },
+    "westStatePlaced" : { "position": { "x": 0, "y": 0 }, "direction": "west", "placed": true },
+    "southStatePlaced" : { "position": { "x": 0, "y": 0 }, "direction": "south", "placed": true },
+    "eastStatePlaced" : { "position": { "x": 5, "y": 5 }, "direction": "east", "placed": true },
+    "validOptions" : [1,1,"north"],
+    "invalidOptions" : [1,1],
+    "invalidPosition" : [-10,8,"north"],
+    "invalidFacing" : [1,1,"asdf"],
+    "place ": {}
+}

@@ -1,0 +1,58 @@
+{
+  "name": "traffic-lights",
+  "version": "1.0.0",
+  "description": "demo for recruiters",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch": "watchify scripts/index.js -o index.browser.js -d & stylus -u nib -w stylus/index.styl -o styles/index.css",
+    "build": "browserify -g uglifyify  -d -p [minifyify --map bundle.map.json --output bundle.map.json ] scripts/index.js > ../shotlom.github.io/index.browser.js & stylus -r -u nib < ~/dev/soto/stylus/index.styl | cssmin > ../shotlom.github.io/style.css | cssmin & cp -R ./fonts ../shotlom.github.io & cp -R ./img ../shotlom.github.io & cp *.html ../shotlom.github.io",
+    "dist": "npm version patch -m \"Bumped to %s\"",
+    "postversion": "git push && git push --tags && npm run build",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shotlom/traffic-lights.git"
+  },
+  "keywords": [
+    "traffic",
+    "lights"
+  ],
+  "author": "Sholto Maud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shotlom/traffic-lights/issues"
+  },
+  "homepage": "https://shotlom.github.io/traffic-lights/#",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "debug": "^2.2.0",
+    "fastn": "^2.6.4",
+    "keypress": "^0.2.1",
+    "kgo": "^3.3.2",
+    "minimist": "^1.2.0",
+    "rooty": "^2.0.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0",
+    "browserify": "^13.0.0",
+    "debug": "^2.2.0",
+    "minifyify": "^7.2.1",
+    "nib": "^1.1.0",
+    "rootify": "^1.1.0",
+    "stylus": "^0.52.0",
+    "uglifyify": "^3.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "rootify"
+    ]
+  },
+  "rootify": {
+    "rootPath": "./scripts"
+  }
+}
